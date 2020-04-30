@@ -6,7 +6,7 @@
 
 <div class="container">
     <form action="add.php" method="post" enctype="multipart/form-data">
-    <div class="form-group row">
+        <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Nom du produit :</label>
             <div class="col-sm-10">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Nom du produit">
@@ -16,16 +16,10 @@
             <label for="category" class="col-sm-2 col-form-label">Catégorie :</label>
             <div class="col-sm-10">
                 <select name="category" id="category">
-                    <option value="eponge">Eponges</option>
-                    <option value="bijou">Bijoux</option>
-                    <option value="bijou">Divers</option>
+                    <option value="eponge">Eponge</option>
+                    <option value="bijou">Bijou</option>
+                    <option value="divers">Divers</option>
                 </select>            
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="type" class="col-sm-2 col-form-label">Sous catégorie :</label>
-            <div class="col-sm-10">
-                <input type="text" name="type" class="form-control" id="type" placeholder="Sous-catégorie du produit">
             </div>
         </div>
         <div class="form-group row">
@@ -47,13 +41,12 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="photo">Ajouter une image : </label>
+            <label for="image">Ajouter une image : </label>
             <div class="col-sm-10">
-                <input type="file" id="photo" name="photo">
+                <input type="file" id="image" name="image">
             </div>
         </div>
         <input class="btn btn-secondary" type="submit" value="Créer le produit">
-
     </form>
 </div>
 
