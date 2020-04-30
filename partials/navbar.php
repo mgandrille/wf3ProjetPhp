@@ -1,5 +1,5 @@
 <header>
-<div class="collapse bg-dark" id="navbarHeader">
+<div class="collapse bg-secondary" id="navbarHeader">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="navbar navbar-dark bg-secondary shadow-sm">
             <div class="container d-flex justify-content-between">
                 <a href="index.php" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
