@@ -21,18 +21,18 @@ $response->execute([
 <?php include './partials/header.php'; ?>
 <?php include './partials/navbar.php'; ?>
 
-<div class="container">
+<div class="container-fluid">
     <h2>Vous venez de créer le produit suivant :</h2>
-    <ul>
-        <li><strong><?= $_POST['name'] ?></strong></li>
-        <li><?= $_POST['category'] ?></li>
-        <li><?= $_POST['matiere'] ?></li>
-        <li><?= $_POST['price'] ?></li>
-        <li><?= $_POST['description'] ?></li>
-        <li>Image : <?= $image['name'] ?></li>
-    </ul>
-
-    
+    <div class="container">
+        <ul>
+            <li><strong><?= $_POST['name'] ?></strong></li>
+            <li><?= $_POST['category'] ?></li>
+            <li><?= $_POST['matiere'] ?></li>
+            <li><?= $_POST['price'] ?></li>
+            <li><?= $_POST['description'] ?></li>
+            <li>Image : <?= $image['name'] ?></li>
+        </ul>
+    </div>
 </div>
 
 <?php include './partials/footer.php'; ?>

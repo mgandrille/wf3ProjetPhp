@@ -4,7 +4,7 @@
 <h1>Page d'ajout produit</h1>
 <p>Remplissez le formulaire ci-dessous pour créer un produit !</p>
 
-<div class="container">
+<div class="container-fluid">
     <form action="add.php" method="post" enctype="multipart/form-data">
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Nom du produit :</label>

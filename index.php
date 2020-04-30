@@ -27,7 +27,7 @@ $produits = $response->fetchAll(PDO::FETCH_ASSOC);
                         <p class="card-text"><?= $produit['category'] ?></p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a type="button" href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                <a type="button" href="view.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">View</a>
                                 <a type="button" href="edit.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Edit</a>
                             </div>
                         </div>
