@@ -50,7 +50,7 @@ $produit = $response->fetch(PDO::FETCH_ASSOC);
                     <textarea name="description" class="form-control" id="description" rows="3" placeholder="Description du produit"><?= $produit['description'] ?></textarea>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row"> <!-- il faut récupérer le nom du fichier déjà enregistré pour l'utiliser -->
                 <label for="image">Modifier l'image : </label>
                 <div class="col-sm-10">
                     <input type="file" id="image" name="image" value="<?= $produit['image'] ?>">

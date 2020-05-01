@@ -30,9 +30,9 @@ $produit = $response->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
         <div class="container mt-4">
-            <div class="card w-75">
+            <div class="card w-50">
                 <h5 class="card-header">Prix</h5>
-                <div class="card-body row">
+                <div class="card-body row justify-content-between mx-3">
                     <p class="card-text"><?= $produit['price'] ?> € TTC</p>
                     <a href="#" class="btn btn-primary">Acheter</a>
                 </div>

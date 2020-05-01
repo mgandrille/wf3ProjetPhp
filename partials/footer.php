@@ -1,7 +1,7 @@
         <footer class="text-muted">
             <div class="container">
                 <p class="float-right">
-                    <a href="#">Back to top</a>
+                    <a href="#header">Back to top</a>
                 </p>
                 <p>Ma Boutique, page crée lors de la session Projet PHP</p>
                 <p>Avec la participation de  <a href="https.//wf3.fr">Web Force 3</a> et Nicolas !</p>

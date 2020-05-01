@@ -1,5 +1,9 @@
 <?php
 $image = $_FILES['image'];
+var_dump($image);
+var_dump($_POST);
+
+die;
 
 include 'config/bdd.php';
 $request = "UPDATE produit 

@@ -6,7 +6,7 @@
             entirely.</p>
         <p> -->
             <a href="create.php" class="btn btn-primary my-2">Créer un produit</a>
-            <a href="#" class="btn btn-secondary my-2">Modifier un produit</a>
+            <a href="#" class="btn btn-secondary my-2">Contactez nous !</a>
         </p>
     </div>
 </section>
