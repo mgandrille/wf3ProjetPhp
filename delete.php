@@ -14,14 +14,25 @@ $produit = $response->fetch(PDO::FETCH_ASSOC);
     <h1>Suppression de l'article</h1>
     <p>Vous souhaitez supprimer l'article suivant :</p>
 
-    <div class="media">
-  <img src="..." class="mr-3" alt="...">
-  <div class="media-body">
-    <h5 class="mt-0">Media heading</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-  </div>
-</div>
+    <div class="media mb-3">
+        <img src="upload/<?= $produit['image'] ?>" class="mr-3" width="150" alt="...">
+        <div class="media-body">
+            <h5 class="mt-0"><?= $produit['name'] ?></h5>
+            <p>
+                Catégorie : <?= $produit['category'] ?> <br>
+                Description : <?= $produit['description'] ?>
+            </p>
+        </div>
+    </div>
 
-<a href="index.php" class="btn btn-primary">Go somewhere</a>
+    <div class="container">
+        <div>
+            <h5>Etes vous sûr de vouloir supprimer ce produit ?</h5>
+        </div>
+        <div>
+            <a href="index.php" class="btn btn-secondary"> Non </a>
+            <a href="deleteConfirm.php?id=<?= $produit['id'] ?>" class="btn btn-danger"> Oui </a>
+        </div>
+    </div>
 
     <?php include 'partials/footer.php' ?>

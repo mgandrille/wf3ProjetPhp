@@ -4,8 +4,6 @@ include 'config/bdd.php';
 
 if(!empty($_FILES['image']['name'])) {
     require_once 'config/uploadFichier.php';
-    var_dump('condition IF');
-
 } 
 
 $request = "UPDATE produit 
@@ -57,7 +55,11 @@ $response->execute($params);
             <li>Image : <?= $newImageName ?></li>
         </ul>
     </div>
-    
+
+    <div>
+        <a href="index.php" class="btn btn-secondary">Retour à l'accueil</a>
+    </div>
+
 </div>
 
 
