@@ -1,27 +1,38 @@
 <?php
-if(!empty($_FILES)) {
-    require_once 'config/uploadFichier.php';
-} 
-else {
-    $newImageName = $_POST['imageh'];
-}
 
 include 'config/bdd.php';
+
+if(!empty($_FILES['image']['name'])) {
+    require_once 'config/uploadFichier.php';
+    var_dump('condition IF');
+
+} 
+
 $request = "UPDATE produit 
-            SET name = :name, category = :category, matiere = :matiere, price = :price,
-                image = :image, description = :description 
-            WHERE id = :id";
+            SET name = :name, category = :category, matiere = :matiere, price = :price, description = :description" ; 
+
+if(isset($newImageName)) {
+    $request .= ", image = :image";
+}
+
+$request .= " WHERE id = :id";
 $response = $bdd->prepare($request);
 
-$response->execute([
+$params = [
     'id'            => $_POST['id'],
     'name'          => $_POST['name'],
     'category'      => $_POST['category'],
     'matiere'       => $_POST['matiere'],
     'price'         => $_POST['price'],
-    'image'         => $newImageName,
     'description'   => $_POST['description']
-]);
+];
+
+if(isset($newImageName)) {
+    $params['image'] = $newImageName;
+}
+
+$response->execute($params);
+
 
 ?>
 

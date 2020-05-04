@@ -29,6 +29,7 @@ $produits = $response->fetchAll(PDO::FETCH_ASSOC);
                             <div class="btn-group">
                                 <a type="button" href="view.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">View</a>
                                 <a type="button" href="edit.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                <a type="button" href="delete.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Delete</a>
                             </div>
                         </div>
                     </div>

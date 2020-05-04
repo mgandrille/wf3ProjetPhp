@@ -14,7 +14,7 @@ if(!in_array($fileExtension, $extensionAuthorised) && !in_array($image['type'], 
     echo "Le fichier est trop volumineux. Il ne doit pas dépasser 3Mo !";
 }
 
-move_uploaded_file($image['tmp_name'], __DIR__ . '/upload/' . $newImageName);
+move_uploaded_file($image['tmp_name'], __DIR__ . '../../upload/' . $newImageName);
 
 
 ?>
