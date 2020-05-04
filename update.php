@@ -54,7 +54,9 @@ $response->execute($params);
             <li><?= $_POST['matiere'] ?></li>
             <li><?= $_POST['price'] ?></li>
             <li><?= $_POST['description'] ?></li>
+        <?php if(isset($newImageName)) : ?>
             <li>Image : <?= $newImageName ?></li>
+        <?php endif ; ?>
         </ul>
     </div>
 

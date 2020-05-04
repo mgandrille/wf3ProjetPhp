@@ -1,8 +1,6 @@
 <?php require_once 'config/config.php' ?>
 
 <?php
-// var_dump($_SESSION);
-
 if(!$_SESSION) {
     $user = false;
 }
@@ -11,22 +9,9 @@ else {
         $user = $_SESSION['user'];
     }
     else {
-        include './config/bdd.php';
-        $request = "SELECT * FROM users 
-                    WHERE email = :email && password = :password";
-        $response = $bdd->prepare($request);
-        $response->execute([
-            'email'    => $_POST['email'],
-            'password' => $_POST['password']
-        ]);
-        $user = $response->fetch(PDO::FETCH_ASSOC);
-        
         $_SESSION['user'] = $user;    
     }    
 }
-
-// var_dump($user);
-
 ?>
 
 <header id="header">
