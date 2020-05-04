@@ -1,9 +1,10 @@
 <?php
-$image = $_FILES['image'];
-var_dump($image);
-var_dump($_POST);
-
-die;
+if(!empty($_FILES)) {
+    require_once 'config/uploadFichier.php';
+} 
+else {
+    $newImageName = $_POST['imageh'];
+}
 
 include 'config/bdd.php';
 $request = "UPDATE produit 
@@ -18,7 +19,7 @@ $response->execute([
     'category'      => $_POST['category'],
     'matiere'       => $_POST['matiere'],
     'price'         => $_POST['price'],
-    'image'         => $image['name'],
+    'image'         => $newImageName,
     'description'   => $_POST['description']
 ]);
 
@@ -42,7 +43,7 @@ $response->execute([
             <li><?= $_POST['matiere'] ?></li>
             <li><?= $_POST['price'] ?></li>
             <li><?= $_POST['description'] ?></li>
-            <li>Image : <?= $image['name'] ?></li>
+            <li>Image : <?= $newImageName ?></li>
         </ul>
     </div>
     

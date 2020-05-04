@@ -1,6 +1,5 @@
 <?php
-$image = $_FILES['image'];
-move_uploaded_file($image['tmp_name'], __DIR__ . '/upload/' . $image['name']);
+require_once 'config/uploadFichier.php';
 
 require 'config/bdd.php';
 $request = "INSERT INTO produit (name, category, matiere, price, description, image) 
@@ -13,7 +12,7 @@ $response->execute([
     'matiere'       => $_POST['matiere'], 
     'price'         => $_POST['price'], 
     'description'   => $_POST['description'],
-    'image'         => $image['name']
+    'image'         => $newImageName
 ]);
 
 ?>
@@ -30,9 +29,12 @@ $response->execute([
             <li><?= $_POST['matiere'] ?></li>
             <li><?= $_POST['price'] ?></li>
             <li><?= $_POST['description'] ?></li>
-            <li>Image : <?= $image['name'] ?></li>
+            <li>Image : <?= $newImageName ?></li>
         </ul>
     </div>
+</div>
+<div class="container">
+    <a class="btn btn-success" href="index.php" role="button">Retour à l'accueil</a>
 </div>
 
 <?php include './partials/footer.php'; ?>

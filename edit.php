@@ -53,7 +53,8 @@ $produit = $response->fetch(PDO::FETCH_ASSOC);
             <div class="form-group row"> <!-- il faut récupérer le nom du fichier déjà enregistré pour l'utiliser -->
                 <label for="image">Modifier l'image : </label>
                 <div class="col-sm-10">
-                    <input type="file" id="image" name="image" value="<?= $produit['image'] ?>">
+                    <input type="hidden" name="imageh" value="<?= $produit['image'] ?>">
+                    <input type="file" id="image" name="image">
                 </div>
             </div>
             <input class="btn btn-secondary" type="submit" value="Modifier le produit">
