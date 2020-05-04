@@ -1,12 +1,11 @@
+<?php require_once 'config/config.php'; ?>
+
 <?php
 
 include 'config/bdd.php';
-
 $request = "SELECT * FROM produit";
 $response = $bdd->query($request);
 $produits = $response->fetchAll(PDO::FETCH_ASSOC);
-
-// var_dump($animals);
 
 ?>
 
@@ -28,8 +27,10 @@ $produits = $response->fetchAll(PDO::FETCH_ASSOC);
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a type="button" href="view.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">View</a>
-                                <a type="button" href="edit.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Edit</a>
-                                <a type="button" href="delete.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                <?php if($user) : ?>                                
+                                    <a type="button" href="edit.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    <a type="button" href="delete.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

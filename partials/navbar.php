@@ -1,5 +1,36 @@
+<?php require_once 'config/config.php' ?>
+
+<?php
+// var_dump($_SESSION);
+
+if(!$_SESSION) {
+    $user = false;
+}
+else {
+    if(isset($_SESSION['user'])) {
+        $user = $_SESSION['user'];
+    }
+    else {
+        include './config/bdd.php';
+        $request = "SELECT * FROM users 
+                    WHERE email = :email && password = :password";
+        $response = $bdd->prepare($request);
+        $response->execute([
+            'email'    => $_POST['email'],
+            'password' => $_POST['password']
+        ]);
+        $user = $response->fetch(PDO::FETCH_ASSOC);
+        
+        $_SESSION['user'] = $user;    
+    }    
+}
+
+// var_dump($user);
+
+?>
+
 <header id="header">
-<div class="collapse bg-secondary" id="navbarHeader">
+    <div class="collapse bg-secondary" id="navbarHeader">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
@@ -10,10 +41,21 @@
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Compte</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="signUp.php" class="text-white">Créer un compte</a></li>
-                            <li><a href="login.php" class="text-white">Se connecter</a></li>
-                        </ul>
+                        <?php if($user) : ?>
+                            <p>Bienvenue <?= $user['email'] ?> !</p>
+                            <ul class="list-unstyled">
+                                <li><a href="create.php" class="text-white">Ajouter un produit</a></li>
+                                <li><a href="logout.php" class="text-white">Se déconnecter</a></li>
+                            </ul>
+
+                        <?php else : ?>
+                            <p>Vous n'êtes pas connecté.</p>
+                            <ul class="list-unstyled">
+                                <li><a href="login.php" class="text-white">Connectez vous</a></li>
+                                <li><a href="signUp.php" class="text-white">Créer un compte</a></li>
+                            </ul>
+
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

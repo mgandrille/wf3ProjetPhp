@@ -1,3 +1,5 @@
+<?php require_once 'config/config.php'; ?>
+
 <?php
 require 'config/bdd.php';
 $request = "SELECT * FROM produit WHERE id=".$_GET["id"];

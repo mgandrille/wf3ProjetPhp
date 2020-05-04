@@ -17,7 +17,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-bottom: 0;
-    background-color: #fff;
+    background: url("./img/baniere.jpg") center / auto no-repeat;
 }
 
 @media (min-width: 768px) {
@@ -47,3 +47,4 @@ footer {
 footer p {
     margin-bottom: .25rem;
 }
+
