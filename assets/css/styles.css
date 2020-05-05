@@ -1,3 +1,18 @@
+/* html,
+body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+} */
+
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -13,11 +28,13 @@
     }
 }
 
+/* Jumbotron */
+
 .jumbotron {
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-bottom: 0;
-    background-image: url("../img/baniere.jpg") ;
+    background-image: url("../img/baniere.jpg") center no-repeat;
 }
 
 @media (min-width: 768px) {
@@ -39,6 +56,44 @@
     max-width: 40rem;
 }
 
+/* Page  login
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+} */
+
+/* Footer */
+
 footer {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -47,4 +102,3 @@ footer {
 footer p {
     margin-bottom: .25rem;
 }
-

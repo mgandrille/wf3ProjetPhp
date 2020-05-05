@@ -13,7 +13,6 @@ $response->execute([
 $user = $response->fetch(PDO::FETCH_ASSOC);
 
 $_SESSION['user'] = $user;
-
 ?>
 
 <?php include 'partials/header.php'; ?>
@@ -21,16 +20,15 @@ $_SESSION['user'] = $user;
 
 <div class="container-fluid">
 
-    <?php if ($user) : ?>
-        <div class="alert alert-success" role="alert">
-            <p>Bienvenue <?= $user['email'] ?> </p>
+    <?php if (isset($user)) : ?>
+        <!-- <div class="alert alert-success" role="alert">
+            <p>Bienvenue <? //$user['email'] ?> </p>
             <p>Vous êtes bien connecté ! </p>
         </div>
         <div>
             <a class="btn btn-success" href="index.php">Retour à l'accueil</a>
-        </div>
-
-            
+        </div> -->
+        <?php header('Location: index.php'); ?>
 
     <?php else : ?>
         <div class="alert alert-danger" role="alert">
@@ -39,7 +37,6 @@ $_SESSION['user'] = $user;
         <div>
             <a class="btn btn-warning" href="login.php">Recommencer</a>
         </div>    
-
 
     <?php endif ; ?>
 

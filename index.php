@@ -27,7 +27,8 @@ $produits = $response->fetchAll(PDO::FETCH_ASSOC);
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a type="button" href="view.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">View</a>
-                                <?php if($user) : ?>                                
+                                <a type="button" href="#" class="btn btn-sm btn-outline-secondary">Panier</a>
+                                <?php if(isset($user)) : ?>                                
                                     <a type="button" href="edit.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Edit</a>
                                     <a type="button" href="delete.php?id=<?= $produit['id']?>" class="btn btn-sm btn-outline-secondary">Delete</a>
                                 <?php endif; ?>

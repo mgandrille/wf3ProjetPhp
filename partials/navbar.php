@@ -12,6 +12,8 @@ else {
         $_SESSION['user'] = $user;    
     }    
 }
+
+// var_dump($user)
 ?>
 
 <header id="header">
@@ -26,13 +28,13 @@ else {
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Compte</h4>
-                        <?php if($user) : ?>
+                        <?php if(!empty($user)) : ?>
                             <p>Bienvenue <?= $user['email'] ?> !</p>
                             <ul class="list-unstyled">
                                 <li><a href="create.php" class="text-white">Ajouter un produit</a></li>
+                                <li><a href="#" class="text-white">Mon panier</a></li>
                                 <li><a href="logout.php" class="text-white">Se déconnecter</a></li>
                             </ul>
-
                         <?php else : ?>
                             <p>Vous n'êtes pas connecté.</p>
                             <ul class="list-unstyled">
